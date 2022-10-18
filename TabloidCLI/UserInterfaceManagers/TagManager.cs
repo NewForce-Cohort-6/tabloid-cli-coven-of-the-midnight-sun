@@ -1,18 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using TabloidCLI.Models;
 
 namespace TabloidCLI.UserInterfaceManagers
 {
     public class TagManager : IUserInterfaceManager
     {
         private readonly IUserInterfaceManager _parentUI;
+        private TagRepository _tagRepository;
+        private string _connectionString;
 
         public TagManager(IUserInterfaceManager parentUI, string connectionString)
         {
             _parentUI = parentUI;
+            _tagRepository = new TagRepository(connectionString);
+            _connectionString = connectionString;
         }
 
         public IUserInterfaceManager Execute()
         {
+            Console.BackgroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Tag Menu");
             Console.WriteLine(" 1) List Tags");
             Console.WriteLine(" 2) Add Tag");
@@ -46,17 +53,31 @@ namespace TabloidCLI.UserInterfaceManagers
 
         private void List()
         {
-            throw new NotImplementedException();
+            List<Tag> tags = _tagRepository.GetAll();
+            foreach (Tag tag in tags)
+            {
+                Console.WriteLine(tag);
+            }
+            //throw new NotImplementedException();
         }
 
         private void Add()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("New Tag");
+            Tag tag = new Tag();
+
+            Console.WriteLine("Name: ");
+            tag.Name = Console.ReadLine();
+
+            _tagRepository.Insert(tag);
+            //throw new NotImplementedException();
         }
 
         private void Edit()
         {
             throw new NotImplementedException();
+
+
         }
 
         private void Remove()

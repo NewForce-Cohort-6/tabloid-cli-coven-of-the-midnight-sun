@@ -15,5 +15,6 @@ namespace TabloidCLI
                 ui = ui.Execute();
             }
         }
+
     }
 }
