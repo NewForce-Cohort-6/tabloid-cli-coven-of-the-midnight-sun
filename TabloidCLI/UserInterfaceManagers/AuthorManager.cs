@@ -19,6 +19,7 @@ namespace TabloidCLI.UserInterfaceManagers
 
         public IUserInterfaceManager Execute()
         {
+            Console.BackgroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Author Menu");
             Console.WriteLine(" 1) List Authors");
             Console.WriteLine(" 2) Author Details");
