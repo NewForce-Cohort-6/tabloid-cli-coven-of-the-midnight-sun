@@ -29,11 +29,3 @@ For our POC, we will build a command line app in C# and save our data in SQL Ser
 The ERD for the POC is provided below
 
 https://dbdiagram.io/d/5fce53559a6c525a03ba2069
-# WireFrame 
-![Tabloid720 (2)](https://user-images.githubusercontent.com/106984214/196718905-b37f3b98-a353-4fa9-b1b9-e518842ac0f2.png)
-
-# ERD
-![Tabloid720](https://user-images.githubusercontent.com/106984214/196718939-cae89f82-1390-4d3a-b14a-7810f609062d.png)
-
-
-
